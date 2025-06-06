@@ -9,16 +9,16 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\AnalysisController;
 
-Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
-
 Route::resource('items', ItemController::class)
 ->middleware(['auth', 'verified']);
 
-Route::resource('customers', CustomerController::class)
-->middleware(['auth', 'verified']);
+// Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
 
-Route::resource('purchases', PurchaseController::class)
-->middleware(['auth', 'verified']);
+// Route::resource('customers', CustomerController::class)
+// ->middleware(['auth', 'verified']);
+
+// Route::resource('purchases', PurchaseController::class)
+// ->middleware(['auth', 'verified']);
 
 
 Route::get('/inertia-test', function () {
@@ -51,6 +51,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');//認証していたら表示ができる仕組み
 
 require __DIR__.'/auth.php';
