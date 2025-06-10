@@ -2,7 +2,7 @@
 import { Link } from "@inertiajs/inertia-vue3";
 
 // ↓コントローラーから渡ってくるなら使う
-defineProps({
+const props = defineProps({
     blogs: Array,
 });
 </script>

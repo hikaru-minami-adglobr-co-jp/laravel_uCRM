@@ -17,7 +17,7 @@ class InertiaTestController extends Controller
 
     public function create()
     {
-return Inertia::render('Inertia/Create');
+        return Inertia::render('Inertia/Create');
     }
 
     public function show($id)
@@ -33,7 +33,8 @@ return Inertia::render('Inertia/Create');
     }
 
     public function store(Request $request)
-    {   //バリデーション [Create.vue]
+    {
+          //バリデーション [Create.vue]
         $request->validate([
             'title' => ['required', 'max:20'],
             'content' => ['required'],
@@ -46,6 +47,8 @@ return Inertia::render('Inertia/Create');
         $inertiaTest->save();
 
         //to_routeでInertia.indexに飛ばす
+        //return Inertia::location(route('inertia.index'));?
+
         return to_route('inertia.index')
         ->with([
             'message' => '登録しました。'

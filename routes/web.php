@@ -8,6 +8,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\AnalysisController;
+use App\Http\Controllers\ProfileController;
 
 Route::resource('items', ItemController::class)
 ->middleware(['auth', 'verified']);
@@ -19,6 +20,11 @@ Route::resource('items', ItemController::class)
 
 // Route::resource('purchases', PurchaseController::class)
 // ->middleware(['auth', 'verified']);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+});
 
 
 Route::get('/inertia-test', function () {
