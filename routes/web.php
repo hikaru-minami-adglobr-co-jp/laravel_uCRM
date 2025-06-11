@@ -15,8 +15,8 @@ Route::resource('items', ItemController::class)
 
 // Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
 
-// Route::resource('customers', CustomerController::class)
-// ->middleware(['auth', 'verified']);
+Route::resource('customers', CustomerController::class)
+->middleware(['auth', 'verified']);
 
 // Route::resource('purchases', PurchaseController::class)
 // ->middleware(['auth', 'verified']);
