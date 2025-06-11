@@ -18,8 +18,8 @@ Route::resource('items', ItemController::class)
 Route::resource('customers', CustomerController::class)
 ->middleware(['auth', 'verified']);
 
-// Route::resource('purchases', PurchaseController::class)
-// ->middleware(['auth', 'verified']);
+Route::resource('purchases', PurchaseController::class)
+->middleware(['auth', 'verified']);
 
 
 Route::middleware(['auth'])->group(function () {

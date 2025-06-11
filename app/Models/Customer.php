@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Purchase;
 
 class Customer extends Model
 {
@@ -26,6 +27,7 @@ class Customer extends Model
         }
     }
 
+    //複数の購買情報見られる
     public function purchases()
     {
         return $this->hasMany(Purchase::class);
