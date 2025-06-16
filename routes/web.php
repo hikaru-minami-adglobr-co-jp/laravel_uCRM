@@ -10,10 +10,11 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\AnalysisController;
 use App\Http\Controllers\ProfileController;
 
+
 Route::resource('items', ItemController::class)
 ->middleware(['auth', 'verified']);
 
-// Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
+Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
 
 Route::resource('customers', CustomerController::class)
 ->middleware(['auth', 'verified']);
